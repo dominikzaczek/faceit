@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Technical Challenge for FaceIT
+by: Dominik Zaczek
 
-## Getting Started
+## Used stack
+NextJS 14, Redux, Redux Toolkit, RTK React Query, TailwindCSS, Tailwind Components
 
-First, run the development server:
+I used `npx create-next-app`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to run
+NextJS 14 requires Node in version at least 18
+ 1. Run `npm install`
+ 2. To run the project run `npm run dev`
+ 3. To see the unit tests (and launch jest watcher) run `npm run test`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About the solution
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Brief introduction
+I haven't had a chance to use Redux for many years, especially since introduction of React Hooks (useContext has been sufficient for most of my projects), I decided to spend a few more hours on the challenge to get myself up to speed with the newest Redux implementations and treat it as a proof of concept. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Different approaches
+I decided to explore different possible approaches with fetching data and rendering the content. My initial approach was to use `createApi` since it supports caching and limiting the amount of requests, which was one of the objectives for this task. It automatically generates React Query hooks which helps providing the best user experience out of the box (handling different query states etc.) At the same time, it has proven to be a little bit challenging when it comes to manipulating the existing cache.
 
-## Learn More
+I also provided an alternative solution that uses reducers, so I exported the reducers as well as selectors to provide the data. Using that approach, which is the one I was more familiar with, made manipulating the existing state easier. 
 
-To learn more about Next.js, take a look at the following resources:
+I also wanted to take advantage of SSR and RSCs, so I provided an alternative route for fetching a single post that can be found at `/ssr/[id]` instead of the default `/post/[id]`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Addressing provided user scenario
+1. I provided all of the points from this point
+2. I managed to add an additional post to the top of the page (for more details on this - please read below) and I didn't have enough time to make the app highlight the newest post
+3. The selected post is displayed on a separated page
+4. I took advantage of the NextJS's Link feature that remembers the last scrolled position by default (more on that - please read below)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Additional considerations
+The solution has many possible improvements. I wanted to cap my time spent on the challenge because I would like to show my real skills and accept if they aren't sufficient for the role. But here are my considerations:
 
-## Deploy on Vercel
+### Adding a post in real time
+In my solution, it is done on the client side by hooks. In real-life, production-ready application I would use either webhooks or GraphQL subscriptions. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Scrolling to the last read position
+As I took advantage of the NextJS's Link feature, it works out of the box - you navigate back in your browser and it sets you at the same position as when you left. If it required a little bit more thorough solution, I would the post's id to the global state when user clicks it for more details. 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Conclusion
+Thank you for giving me a chance to prove my skills. 
+
+# faceit
