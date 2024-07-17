@@ -3,7 +3,7 @@ import { useGetPostsQuery } from '@/lib/features/posts/postsApiSlice';
 
 const useInfiniteScroll = () => {
   const [skip, setSkip] = useState(0);
-  const limit = Number(process.env.NEXT_PUBLIC_POST_LIMIT); // Fixed limit per page
+  const limit = Number(process.env.NEXT_PUBLIC_POST_LIMIT);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
 
   const { data, isError, isLoading, isSuccess, isFetching } = useGetPostsQuery({ limit, skip });

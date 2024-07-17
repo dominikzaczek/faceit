@@ -4,13 +4,14 @@ by: Dominik Zaczek
 ## Used stack
 NextJS 14, Redux, Redux Toolkit, RTK React Query, TailwindCSS, Tailwind Components
 
-I used `npx create-next-app`
+I used `npx create-next-app` and based my initial approach on Redux's boilerplate.
 
 ## How to run
 NextJS 14 requires Node in version at least 18
  1. Run `npm install`
- 2. To run the project run `npm run dev`
- 3. To see the unit tests (and launch jest watcher) run `npm run test`
+ 2. Before running, use `cp .env.local.sample .env.local` to ensure that the posts limit is properly set in environmental variables
+ 3. To run the project run `npm run dev`
+ 4. To see the unit tests (and launch jest watcher) run `npm run test`
 
 ## About the solution
 
@@ -41,6 +42,3 @@ As I took advantage of the NextJS's Link feature, it works out of the box - you 
 
 ## Conclusion
 Thank you for giving me a chance to prove my skills. 
-
-# faceit
-# faceit

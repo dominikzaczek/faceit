@@ -12,10 +12,6 @@ describe('Author Component', () => {
     mockUseFetchAuthorQuery.mockReset();
   });
 
-  // it('renders null if authorId is not provided', () => {
-  //   render(<Author authorId={null} />);
-  //   expect(screen.queryByText('...')).toBeNull();
-  // });
 
   it('renders loading state correctly', () => {
     mockUseFetchAuthorQuery.mockReturnValue({

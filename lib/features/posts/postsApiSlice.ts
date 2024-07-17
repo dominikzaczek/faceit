@@ -1,4 +1,3 @@
-// features/posts/postsApiSlice.ts
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 type Post = {

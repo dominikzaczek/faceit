@@ -1,4 +1,3 @@
-// Post.tsx
 import React from 'react';
 import PostTags from './PostTags';
 import PostBody from './PostBody';
