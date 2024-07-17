@@ -40,6 +40,9 @@ In my solution, it is done on the client side by hooks. In real-life, production
 ### Scrolling to the last read position
 As I took advantage of the NextJS's Link feature, it works out of the box - you navigate back in your browser and it sets you at the same position as when you left. If it required a little bit more thorough solution, I would the post's id to the global state when user clicks it for more details. 
 
+### Initial Server-Side fetching
+I believe that it would be the best to fetch the initial posts on the server side and then hydrate the global state with the posts. That is what I'd do to improve the website's response.
+
 ## Conclusion
 Thank you for giving me a chance to prove my skills. 
 
