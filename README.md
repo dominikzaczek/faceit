@@ -16,7 +16,7 @@ NextJS 14 requires Node in version at least 18
 ## About the solution
 
 ### Brief introduction
-I haven't had a chance to use Redux for many years, especially since introduction of React Hooks (useContext has been sufficient for most of my projects), I decided to spend a few more hours on the challenge to get myself up to speed with the newest Redux implementations and treat it as a proof of concept. 
+I haven't had a chance to use Redux for many years, especially since introduction of React Hooks (useContext has been sufficient for most of my projects), I needed a few hours to get myself up to speed with the newest Redux implementations.
 
 ### Different approaches
 I decided to explore different possible approaches with fetching data and rendering the content. My initial approach was to use `createApi` since it supports caching and limiting the amount of requests, which was one of the objectives for this task. It automatically generates React Query hooks which helps providing the best user experience out of the box (handling different query states etc.) At the same time, it has proven to be a little bit challenging when it comes to manipulating the existing cache.
@@ -42,3 +42,4 @@ As I took advantage of the NextJS's Link feature, it works out of the box - you 
 
 ## Conclusion
 Thank you for giving me a chance to prove my skills. 
+
